@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+    color: #fff;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: #0b0b0b;
+    padding: 25vh 10vw;
+}
+.line{
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3vw;
+}
+.line p {
+    padding: 4vw 15vw;
+    opacity: 0;
+}
+#part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+#part1 h5, #part1 h6{
+    font-size: 3vw;
+    font-style: italic;
+    font-weight: 400;
+}
+#part1 h5{
+    /* background-color: red; */
+    width: 4.5vw;
+    text-align: right;
+}
+.line h1{
+    font-size: 6vw;
+    font-weight: 700;
+}
+.line h2{
+    font-size: 5.5vw;
+    font-weight: 800;
+    opacity: 0;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+@keyframes nowFlickerr {
+    0%{
+        font-family: "Gilroy";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-style: italic;
+        opacity: 1;
+    }
+    48%{
+        font-family: "Gilroy";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-style: italic;
+        opacity: 0;
+    }
+    51%{
+        font-family: "PP woodland";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        font-style: italic;
+        opacity: 1;
+    }
+    100%{
+        font-family: "PP woodland";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-style: italic;
+        font-weight: 500;
+        opacity: 0;
+    }
+}
+main{
+    position: relative;
+    background-color: #030303;
+}
+#page1{
+    height: 100vh;
+    width: 100vw;
+    background-color: #151515;
+}
