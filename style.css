@@ -10,7 +10,16 @@ html,body{
     height: 100%;
     width: 100%;
 }
-
+#crsr{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    border: 2px solid #ffffff7d;
+    position: fixed;
+    z-index: 9999;
+    mix-blend-mode:difference;
+    transform: translate(-50%, -50%);
+}
 #loader{
     height: 100%;
     width: 100%;
@@ -93,9 +102,72 @@ html,body{
 main{
     position: relative;
     background-color: #030303;
+    margin: 0.1px;
+    padding:0.1px;
+}
+#watermark{
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    position: fixed;
+    padding-top: 2vh;
+    z-index: 2;
+    /* background-color: #a34545; */
 }
 #page1{
     height: 100vh;
     width: 100vw;
     background-color: #151515;
+}
+nav{
+    /* background-color: indigo; */
+    width: 80%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    left: 20vw;
+    padding-top: 10vh;
+}
+nav h5{
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+#navpart1{
+    margin-left: -14vw;
+}
+#navpart2{
+    margin-right: -12vw;
+    width: fit-content;
+    /* background-color: brown; */
+    display: flex;                                      
+    gap: 28%;
+}
+
+.page1Main {
+    /* background-color: red; */
+    width: 72%;
+    margin-left: 27%;
+    overflow-y: hidden;
+}
+
+.page1Main h1{
+    font-size: 6vw;
+    font-weight: 500;
+    line-height: 6vw;
+}
+
+#page1line1 {
+    margin-top: 12vh;
+}
+#page1line3{
+    display: flex;
+}
+#page1line3 h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    font-weight: 600;
 }
