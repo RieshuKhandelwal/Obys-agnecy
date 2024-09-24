@@ -10,16 +10,16 @@ html,body{
     height: 100%;
     width: 100%;
 }
-#crsr{
+
+.mouseFollower{
     height: 3vw;
     width: 3vw;
-    border-radius: 50%;
-    border: 2px solid #ffffff7d;
-    position: fixed;
-    z-index: 9999;
-    mix-blend-mode:difference;
-    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    background-color: transparent;
+    scale: 2;
+    mix-blend-mode: difference;
 }
+
 #loader{
     height: 100%;
     width: 100%;
@@ -52,7 +52,6 @@ html,body{
     font-weight: 400;
 }
 #part1 h5{
-    /* background-color: red; */
     width: 4.5vw;
     text-align: right;
 }
@@ -100,7 +99,7 @@ html,body{
 }
 main{
     position: relative;
-    background-color: #030303;
+    background-color: #151515;
     margin: 0.1px;
     padding:0.1px;
 }
@@ -114,7 +113,6 @@ main{
     position: fixed;
     padding-top: 2vh;
     z-index: 2;
-    /* background-color: #a34545; */
 }
 #page1{
     height: 100vh;
@@ -122,7 +120,6 @@ main{
     background-color: #151515;
 }
 nav{
-    /* background-color: indigo; */
     width: 80%;
     height: 20vh;
     display: flex;
@@ -141,7 +138,6 @@ nav h5{
 #navpart2{
     margin-right: -12vw;
     width: fit-content;
-    /* background-color: brown; */
     display: flex;                                      
     gap: 28%;
 }
@@ -171,7 +167,7 @@ nav h5{
     font-size: 4vw;
     font-weight: 500;
     left: 18%;
-    top: 32%;
+    top: 31%;
 }
 
 #page1line3{
@@ -180,7 +176,7 @@ nav h5{
 #page1line3 h1{
     border-bottom: 0.5vw solid #fff;
     padding-bottom: 0.8vw;
-    /* transition: all ease 0.3s; */
+
 }
 #page1line3 h1:hover{
     -webkit-text-stroke: 1px #fff;
@@ -190,9 +186,18 @@ nav h5{
     font-style: italic;
     border-bottom: 0.5vw solid #ffffff00;
 }
-
-
-/* page2 starts */
+#flag{
+    height: 20vw;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+#page1line3{
+    z-index: 999;
+    position: relative;
+}
 
 #page2{
     width: 100vw;
@@ -207,6 +212,9 @@ nav h5{
     margin-left: 27%;
     position: relative;
     background-color: #fff;
+    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 #videoCursor{
     height: 8vw;
@@ -214,8 +222,8 @@ nav h5{
     border-radius: 50%;
     position: absolute;
     z-index: 999;
-    bottom: 85%;
-    right: 12%;
+    top: -15%;
+    left: 75%;
     background-color: #FFA63D;
     font-size: 2.5vw;
 }
@@ -224,32 +232,148 @@ nav h5{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 0.5vw;
 }
 #videoContainer video{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-#videoContainer img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 1;
+    opacity: 0;
 }
 
-/* page3 starts */
 
 #page3{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(61, 61, 61);
     position: relative;
+    padding: 17vh 2vw;
 }
 
+#page3 h1{
+    font-size: 8vw;
+    font-weight: 500;
+    position: relative;
+    margin-left: 27vw;
+}
 
-/* page4 starts */
+#page3 h1::before{
+    content: "02";
+    font-family: "silk serif";
+    font-style: italic;
+    font-size: 4vw;
+    font-weight: 500;
+    position: absolute;
+    left: -13%;
+    top: 4%;
+}
+
+#page3 .underline{
+    height: 2px;
+    width: 65%;
+    margin-top: 1.5vw;
+    background-color: #fff;
+    margin-left: 27vw;
+}
+
+#image-div-container{
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-div{
+    height: 38vw;
+    width: 27vw;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 3vw;
+}
+.image-div:nth-child(1){
+    height: 29vw;
+    width: 21vw;
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page3-circle1{
+    height: 22vw;
+    width: 22vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 9vw;
+    margin-top: 14vw;
+    position: relative;
+}
+.page3-circle1 svg{
+    height: 30%;   
+}
+.circle-in{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.circle-in p{
+    color: black;
+    width: 70%;
+    font-size: 1.1vw;
+    scale: 0;
+    transition: all ease 0.5s;
+}
+.page3-circle1:hover .circle-in {
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle1:hover p {
+    scale: 1;
+}
+.page3-circle2{
+    height: 22vw;
+    width: 22vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2vw;
+    position: relative;
+}
+.page3-circle2 svg{
+    height: 30%;   
+    rotate: -45deg;
+}
+
+.page3-circle2:hover .circle-in {
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle2:hover p {
+    scale: 1;
+}
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
+}
 
 #page4{
     min-height: 100vh;
@@ -335,7 +459,7 @@ nav h5{
     width: 96%;
 }
 
-/* page5 starts */
+
 
 #page5{
     width: 100%;
@@ -344,8 +468,13 @@ nav h5{
 }
 .movingBlock {
     white-space: nowrap;
-    /* overflow-x: auto; */
     margin-bottom: 1vw;
+}
+.movingBlock span{
+    font-style: italic;
+    font-family: "silk serif";
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
 }
 .movingBlock h1{
     font-size: 8vw;
@@ -355,7 +484,7 @@ nav h5{
     display: inline-block;
     margin-right: 16px;
     animation-name: lineMovement;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-timing-function: linear;
     animation-iteration-count: infinite; 
 }
@@ -370,15 +499,6 @@ nav h5{
         transform: translateX(calc(-100% - 20px));
     }
 }
-
-.movingBlock span{
-    font-style: italic;
-    font-family: "silk serif";
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-}
-
-/* footer starts */
 
 footer{
     width: 100%;
@@ -402,14 +522,14 @@ footer h1::before{
     left: -13%;
     top: 4%;
 } 
-footer h1:hover{
+/* footer h1:hover{
     font-size: 7vw;
     font-weight: 600;
     font-family: "silk serif";
     font-style: italic;
     color: transparent;
     -webkit-text-stroke: 1px #fff;
-} 
+}  */
 footer h1>p{
     font-size: 8vw;
     font-weight: 600;
@@ -450,6 +570,7 @@ footer >h5{
     font-weight: 500;
     font-size: 1.5vw;
 }
+
 /* .extra{
     height: 100vh;
     width: 100%;
