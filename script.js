@@ -21,7 +21,11 @@ function locomotiveScrolltrigger(){
     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
     pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
     });
+    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
+    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+    ScrollTrigger.refresh();
 }
 function loadingAnimation(){
     var tl = gsap.timeline();
@@ -58,7 +62,7 @@ function loadingAnimation(){
     tl.to("#loader",{
         opacity:0,
         duration:0.3,
-        // delay:4.1,
+        delay:4.1,
     })
     tl.from("#page1",{
         delay:0.2,
@@ -124,10 +128,10 @@ function cursorAnimation(){
             gsap.to("#videoCursor",{
                 scale: 1,
             });
+            flag = 0;
         }
-    })
-    
-    Shery.makeMagnet("#navpart2 h5" /* Element to target.*/, {
+    });
+    Shery.makeMagnet("#navpart2 h5", {
         //Parameters are optional.
         ease: "cubic-bezier(0.23, 1, 0.320, 1)",
         duration: 1,
@@ -137,11 +141,10 @@ function cursorAnimation(){
 function sheryAnimation(){
     Shery.imageEffect(".image-div",{
         style:5,
-        config:{"a":{"value":3.21,"range":[0,30]},"b":{"value":0.75,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7999891075413561},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.09,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.61,"range":[0,10]},"metaball":{"value":0.43,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}},
         gooey: true,
-
+        config:{"a":{"value":2,"range":[0,30]},"b":{"value":0.75,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7272791075413561},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.3,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.66,"range":[0,10]},"metaball":{"value":0.43,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":7.44,"range":[0,100]}},
     });
-}
+}                                                   
 
 document.addEventListener("mousemove",function(details){
     gsap.to("#flag",{
@@ -164,7 +167,7 @@ document.querySelector("footer h1").addEventListener("mouseover",function(){
     $('footer h1').textillate({ in: { effect: 'rollIn' } });
 })
 locomotiveScrolltrigger();
-// loadingAnimation();
+loadingAnimation();
 cursorAnimation();
 sheryAnimation();
 

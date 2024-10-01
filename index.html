@@ -6,12 +6,12 @@
     <title>Document</title>
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" integrity="sha256-TryXbHoOGuTSpAGc8mP33sWvAKI+fhvU4AZZ0LPaesk=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <div id="loader">
+    <div id="loader">
         <div class="line" id="line1">
             <div id="part1">
                 <h5>00</h5>
@@ -29,7 +29,7 @@
         <div class="line">
             <p>Please wait <br>a few seconds.</p>
         </div>
-    </div> -->
+    </div>
     <main>
         <div id="watermark">
             <svg class="menu-opener__square" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -56,7 +56,7 @@
                 <path d="M0 14.0195C0 10.4572 2.9854 7.58432 6.77456 7.35449C4.4781 7.69923 3.78916 11.4914 3.78916 14.0195C3.78916 16.5476 4.4781 20.2249 6.77456 20.6845C2.9854 20.4547 0 17.5819 0 14.0195Z" fill="currentColor"></path>
             </svg>
         </div>
-        <div id="page1">
+        <div id="page1" data-scroll data-scroll-speed="-1">
             <nav>
                 <div id="navpart1"><h5>Obys— <br>Creative <br>Design <br>Agency</h5></div>
                 <div id="navpart2">
@@ -80,13 +80,13 @@
             </div>
             <img src="https://obys.agency/wp-content/uploads/2022/03/Flag.jpg" alt="flagImage" id="flag">
         </div>
-        <div id="page2">
+        <div id="page2" data-scroll data-scroll-speed="-2.5">
             <div id="videoContainer">
                 <div id="videoCursor"><p>▶️</p></div>
                 <video loop src="https://obys.agency/wp-content/uploads/2022/11/Obys-Showreel-2022.mp4"></video>
             </div>
         </div>
-        <div id="page3">
+        <div id="page3" data-scroll data-scroll-speed="-2.5">
             <h1>OUR PROJECTS</h1>
             <div class="underline"></div>
             <div id="image-div-container">
@@ -116,7 +116,7 @@
                 </div>
             </div>
         </div>
-        <div id="page4">
+        <div id="page4" data-scroll data-scroll-speed="-2.5">
             <div id="page4Content">
                 <h1>ABOUT OBYS</h1>
                 <div class="underline"></div>
@@ -196,7 +196,7 @@
                 <div class="underline"></div>
             </div>
         </div>
-        <div id="page5">
+        <div id="page5" data-scroll data-scroll-speed="-2.5">
             <div class="movingBlock">
                 <h1>SPORT — FASHION — <span>TECHNOLOGY</span> —</h1>
                 <h1>SPORT — FASHION — <span>TECHNOLOGY</span> —</h1>
@@ -215,7 +215,7 @@
             </div>
 
         </div>
-        <footer>
+        <footer data-scroll data-scroll-speed="-2.5">
             <h1>LET&apos;S CREATE <p>→</p></h1>
             <div class="underline"></div>
             <div class="footerBox">
@@ -243,15 +243,14 @@
             <div class="underline"></div>
             <h5>Obys Agency © 2024</h5>
         </footer>
-        <div class="extra"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" integrity="sha256-odlNpseyKe/Yr2FVkKfof6CSj8+edbarxw5hDpqCGBE=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/textillate@0.4.1/jquery.textillate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
     <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
     <script src="script.js"></script>

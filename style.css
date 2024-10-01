@@ -1,3 +1,21 @@
+@font-face {
+    font-family: "plain light";
+    src: url(./fonts/plain-light-webfont.ttf);
+}
+@font-face {
+    font-family: "Plain";
+    src: url(./fonts/plain-regular-webfont.ttf);
+}
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-lightitalic-webfont.ttf);
+}
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-regularitalic-webfont.ttf);
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +28,7 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
 
 .mouseFollower{
     height: 3vw;
@@ -24,7 +43,7 @@ html,body{
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     background-color: #0b0b0b;
     padding: 25vh 10vw;
 }
@@ -48,7 +67,7 @@ html,body{
 }
 #part1 h5, #part1 h6{
     font-size: 3vw;
-    font-style: italic;
+    font-family: "silk serif";
     font-weight: 400;
 }
 #part1 h5{
@@ -60,10 +79,10 @@ html,body{
     font-weight: 600;
 }
 .line h2{
-    font-size: 5.5vw;
+    font-size: 5vw;
     font-weight: 900;
     opacity: 0;
-    font-style: italic;
+    /* font-style: italic; */
     animation-duration: 1.4s;
     animation-iteration-count: infinite;
 }
@@ -82,7 +101,7 @@ html,body{
         font-weight: 500;
         opacity: 0;
     }
-    51%{
+    50%{
         font-family: "silk serif";
         -webkit-text-stroke: 1px #fff;
         color: transparent;
@@ -102,6 +121,7 @@ main{
     background-color: #151515;
     margin: 0.1px;
     padding:0.1px;
+    z-index: 99;
 }
 #watermark{
     height: 20vh;
@@ -116,8 +136,10 @@ main{
 }
 #page1{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #151515;
+    z-index: 100;
+    margin-bottom: 20vh;
 }
 nav{
     width: 80%;
@@ -165,13 +187,14 @@ nav h5{
     font-family: "silk serif";
     font-style: italic;
     font-size: 4vw;
-    font-weight: 500;
+    font-weight: 400;
     left: 18%;
     top: 31%;
 }
 
 #page1line3{
     display: flex;
+    width: fit-content;
 }
 #page1line3 h1{
     border-bottom: 0.5vw solid #fff;
@@ -205,6 +228,7 @@ nav h5{
     background-color: #151515;
     padding: 17vh;
     position: relative;
+    margin-bottom: 20vw;
 }
 #videoContainer{
     height: 66vh;
@@ -246,6 +270,7 @@ nav h5{
     width: 100%;
     position: relative;
     padding: 17vh 2vw;
+    margin: 20vw 0 15vw 0;
 }
 
 #page3 h1{
@@ -260,7 +285,7 @@ nav h5{
     font-family: "silk serif";
     font-style: italic;
     font-size: 4vw;
-    font-weight: 500;
+    font-weight: 400;
     position: absolute;
     left: -13%;
     top: 4%;
@@ -370,22 +395,21 @@ nav h5{
 .page3-circle2:hover p {
     scale: 1;
 }
-._canvas_container{
-    z-index: 999999 !important;
-    pointer-events: none;
-}
+
 
 #page4{
     min-height: 100vh;
     width: 100%;
     padding: 7vw 0;
     position: relative;
+    margin: 1vw 0 15vw 0;
 }
 
 #page4Content{
     width: 72%;
     margin-left: 27%;
     position: relative;
+    margin: 20vw;
 }
 
 #page4Content h1{
@@ -396,9 +420,8 @@ nav h5{
 #page4Content h1::before{
     content: "03";
     font-family: "silk serif";
-    font-style: italic;
     font-size: 4vw;
-    font-weight: 500;
+    font-weight: 400;
     position: absolute;
     left: -13%;
     top: 4%;
@@ -457,6 +480,15 @@ nav h5{
 #page4Content .underline:last-child{
     margin-top: -4vw;
     width: 96%;
+    position: relative;
+}
+#page4Content .underline:last-child::after{
+    content: "We Work With";
+    font-size: 3vw;
+    font-weight: 300;
+    position: absolute;
+    top: 5vw;
+    left: 0;
 }
 
 
@@ -465,11 +497,14 @@ nav h5{
     width: 100%;
     min-height: 100vh;
     position: relative;
+    margin: 4vw 0 20vw 0;
 }
 .movingBlock {
     white-space: nowrap;
     margin-bottom: 1vw;
+    overflow-x: hidden;
 }
+
 .movingBlock span{
     font-style: italic;
     font-family: "silk serif";
@@ -477,18 +512,31 @@ nav h5{
     -webkit-text-stroke: 1px #fff;
 }
 .movingBlock h1{
-    font-size: 8vw;
-    font-weight: 500;
+    font-size: 7vw;
+    font-weight: 400;
     color: transparent;
     -webkit-text-stroke: 1px #fff;
     display: inline-block;
-    margin-right: 16px;
     animation-name: lineMovement;
-    animation-duration: 8s;
+    animation-duration: 17s;
     animation-timing-function: linear;
     animation-iteration-count: infinite; 
 }
+
+.movingBlock:nth-child(1) h1, .movingBlock:nth-child(3) h1{
+    margin-right: 16px;
+}
 .movingBlock:nth-child(2) h1, .movingBlock:nth-child(4) h1{
+    font-size: 7vw;
+    font-weight: 400;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    display: inline-block;
+    transform: translateX(-100% - 20px);
+    animation-name: lineMovement;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
     animation-direction: reverse;
 }
 @keyframes lineMovement {
@@ -502,9 +550,11 @@ nav h5{
 
 footer{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     position: relative;
     padding-left: 28%;
+    padding-top: 5vw;
+    margin: 15vw 0 8vw 0;
 }
 footer h1{
     font-size: 7vw;
@@ -522,14 +572,6 @@ footer h1::before{
     left: -13%;
     top: 4%;
 } 
-/* footer h1:hover{
-    font-size: 7vw;
-    font-weight: 600;
-    font-family: "silk serif";
-    font-style: italic;
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-}  */
 footer h1>p{
     font-size: 8vw;
     font-weight: 600;
@@ -571,8 +613,320 @@ footer >h5{
     font-size: 1.5vw;
 }
 
-/* .extra{
-    height: 100vh;
-    width: 100%;
-    background-color: #FFA63D;
-} */
+._canvas_container{
+    z-index: 9999999 !important;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    #watermark{
+        height: 10vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        padding: 2vh 3vh;
+        margin-top: 1px;
+        /* background-color: #3f7df4; */
+    }
+    #page1 {
+        height: 40vh;
+        width: 100%;
+        /* background-color: #4a2a2a; */
+        padding-top: 1px;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .page1Main {
+        width: 72%;
+        margin-left: 5%;
+        height: fit-content;
+        overflow-y: hidden;
+        display: flex;
+        align-items: center;
+    }
+    .page1Main:nth-child(2){
+        margin-top: 26vh;
+    }
+    .page1Main h1{
+        font-size: 9.5vw;
+        font-weight: 500;
+        line-height: 10vw;
+        position: relative;
+    }
+    #page1line1::before {
+        font-size: 5vw;
+        font-weight: 400;
+        left: 5%;
+        top: 45%;
+    }
+    #page1line3 h1{
+        border-bottom: 0.8vw solid #fff;
+    }
+
+    #page2{
+        width: 100vw;
+        height: 60vh;
+        background-color: #151515;
+        padding: 0;
+        position: relative;
+    }
+    #videoContainer{
+        height: 60vh;
+        width: 100%;
+        margin-left: 0;
+        position: relative;
+        background-color: #fff;
+        background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    #videoCursor{
+        height: 20vw;
+        width: 20vw;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: #FFA63D;
+        font-size: 2.5vw;
+    }
+    #videoCursor p{
+        font-size: large;
+    }
+    
+    #page3{
+        padding: 14vh 2vw;
+    }
+    
+    #page3 h1{
+        font-size: 11vw;
+        font-weight: 500;
+        margin-left: 5%;
+    }
+    
+    #page3 h1::before{
+        font-size: 5vw;
+        left: 0;
+        top: -64%;
+    }
+    
+    #page3 .underline{
+        width: 90%;
+        margin-top: 1vw;
+        margin-left: 5%;
+    }
+    
+    #image-div-container{
+        margin-left: 5%;
+        padding-right: 0;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .image-div{
+        height: 110vw;
+        width: 84vw;
+        position: relative;
+        flex-shrink: 0;
+        overflow: hidden;
+        margin: 8vw 0;
+    }
+    .image-div:nth-child(1){
+        height: 110vw;
+        width: 84vw;
+    }
+    
+    .image-div img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .page3-circle1{
+        display: none;
+    }
+    
+    .page3-circle2{
+        display: none;
+    }
+
+    #page4{
+        padding: 0;
+        margin-bottom: 20vh;
+    }
+    
+    #page4Content{
+        padding: 0 5vw;
+        width: 95%;
+        margin-left: 5%;
+    }
+    
+    #page4Content h1{
+        font-size: 11vw;
+    }
+    #page4Content h1::before{
+        font-size: 5vw;
+        font-weight: 300;
+        left: 0;
+        top: -100%;
+    }
+    #page4Content .underline {
+        height: 1px;
+        width: 95%;
+    }
+    
+    #page4Content > p{
+        margin-top: 11vw;
+        font-size: 6vw;
+        font-weight: 400;
+        width: 100%;
+    }
+    #page4flex{
+        margin-top: 11vw;
+        display: flex;
+        gap: 2.5vw;
+        flex-direction: column;
+
+    }
+    #page4flex img{
+        width: 95%;
+        margin-bottom: 11vw;
+    }
+    #page4flex h4{
+        font-size: 5vw;
+        width: 95%;
+        font-weight: 300;
+    }
+    #bluebox{
+        margin-top: 15vw;
+        width: 95%;
+        padding: 5vw;
+        top: 10%;
+        right: 0;
+    }
+    .blueboxsection h3{
+        width: 35%;
+        font-weight: 400;
+        font-size: 5vw;
+    }
+    .blueboxsection h4{
+        width: 55%;
+        font-weight: 300;
+        font-size: 4vw;
+    }
+    #page4Content .underline:last-child{
+        margin-top: 24vw;
+        width: 100%;
+    }
+    #page4Content .underline:last-child::after{
+        content: "We Work With";
+        font-size: 3vw;
+        font-weight: 300;
+        position: absolute;
+        top: 5vw;
+        left: 0;
+    }
+
+    #page5{
+        width: 100%;
+        min-height: 50vh;
+        position: relative;
+        margin-bottom: 5vh;
+    }
+    
+    .movingBlock h1{
+        font-size: 12vw;
+        font-weight: 400;
+        color: transparent;
+        -webkit-text-stroke: 1px #fff;
+        display: inline-block;
+        animation-name: lineMovement;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite; 
+    }
+    
+    .movingBlock:nth-child(1) h1, .movingBlock:nth-child(3) h1{
+        margin-right: 16px;
+    }
+    .movingBlock:nth-child(2) h1, .movingBlock:nth-child(4) h1{
+        font-size: 12vw;
+        font-weight: 400;
+        color: transparent;
+        -webkit-text-stroke: 1px #fff;
+        display: inline-block;
+        transform: translateX(-100% - 20px);
+        animation-name: lineMovement;
+        animation-duration: 25s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite; 
+        animation-direction: reverse;
+    }
+    
+    footer{
+        width: 100%;
+        height: 120vh;
+        position: relative;
+        padding: 10%;
+    }
+    footer h1{
+        font-size: 9vw;
+    }
+    footer h1::before{
+        font-size: 5vw;
+        font-weight: 400;
+        left: 0;
+        top: -12vw;
+    } 
+    footer h1>p{
+        font-size: 8vw;
+        font-weight: 600;
+    } 
+    
+    footer .underline{
+        width: 100%;
+        margin: 7vw 0 7vw 0;
+    }
+    
+    .footerBox{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 90%;
+        padding-right: 5vw;
+    }
+    .box{
+        margin: 1vw 0 2vw 0;
+        width: 40%;
+    }
+    .box h5{
+        font-size: 6vw;
+        font-weight: 500;
+        margin-bottom: 1vw;
+    }
+    .box h6{
+        font-size: 4.8vw;
+        font-weight: 500;
+        margin: 4vw 0;
+    }
+    
+    footer >h5{
+        min-height: 15vw;
+        font-weight: 500;
+        font-size: 5vw;
+        margin-bottom: 10vh;
+    }
+
+}
